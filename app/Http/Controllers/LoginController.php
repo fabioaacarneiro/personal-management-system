@@ -10,11 +10,14 @@ class LoginController extends Controller
         return view('login');
     }
 
-    public function store() {
-        return view('login');
+    public function store(Request $request) {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
     }
 
     public function destroy() {
-        var_dump('logout');
+        var_dump('login');
     }
 }
