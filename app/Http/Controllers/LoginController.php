@@ -37,6 +37,7 @@ class LoginController extends Controller
     }
 
     public function destroy() {
-        var_dump('login');
+        Auth::logout();
+        return redirect()->route('home');
     }
 }
