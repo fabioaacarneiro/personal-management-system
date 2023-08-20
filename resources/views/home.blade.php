@@ -2,6 +2,9 @@
 @section('title', 'Home')
 
 @section('content')
-    <a href="{{ route('login.index') }}">Login</a>
+    <div class="nav">
+        <a href="{{ route('login.index') }}">Login</a>
+        <a href="{{route('sign.index')}}">Cadastrar</a>
+    </div>
     <h2>Home</h2>
 @endsection
