@@ -8,5 +8,5 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::controller(LoginController::class)->group(function () {
     Route::get('/login', 'index')->name('login.index');
-    Route::get('/login', 'store')->name('login.store');
+    Route::post('/login', 'store')->name('login.store');
 })
