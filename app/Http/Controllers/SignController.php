@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
 
 class SignController extends Controller
 {
     public function index() {
-        return view('sign');
+        return view('pages.sign');
     }
 
     public function store(Request $request ) {
@@ -19,7 +20,7 @@ class SignController extends Controller
             } else if (!$request->password == $request->password_confirm) {
                 return 'As senhas precisam ser iguais,';
             }
-        } catch (\Throwable $th) {
+        } catch (Exception) {
             return 'Não foi possível cadastrar o usuário';
         }
 

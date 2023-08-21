@@ -18,15 +18,13 @@ class AccountSettings extends Controller
         try {
             if ($request->password == $user->password) {
                 if ($request->new_password == $request->new_password_confirm) {
-                    $user->update([
-                        'password' => $request->new_password
-                    ]);
+                    $user->update(['password' => $request->new_password]);
                 } else {
-                    return 'as senhas não combinas.';
+                    return 'As senhas não combinas.';
                 }
             }
-        } catch (\Throwable $th) {
-            return 'não foi possível atualizar a senha,';
+        } catch (Exception) {
+            return 'Não foi possível atualizar a senha,';
         }
     }
 
@@ -34,10 +32,8 @@ class AccountSettings extends Controller
         $user = User::findOrFail($id);
 
         try {
-            $user->update([
-                'name' => $request->new_name
-            ]);
-        } catch (Exception $e) {
+            $user->update(['name' => $request->new_name]);
+        } catch (Exception) {
             return 'Não foi possível atualizar o nome do usuário';
         }
     }

@@ -10,7 +10,7 @@
     @endif
 
     @if (auth()->check())
-        Already logged in {{auth()->user()->name}} | <a href="{{route('login.destroy')}}">logout</a>
+        Logado com sucesso {{auth()->user()->name}} | <a href="{{route('login.destroy')}}">deslogar</a>
     @else
     
         @error('error')
