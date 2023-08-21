@@ -29,4 +29,16 @@ class AccountSettings extends Controller
             return 'não foi possível atualizar a senha,';
         }
     }
+
+    public function update_name(Request $request, $id) {
+        $user = User::findOrFail($id);
+
+        try {
+            $user->update([
+                'name' => $request->new_name
+            ]);
+        } catch (Exception $e) {
+            return 'Não foi possível atualizar o nome do usuário';
+        }
+    }
 }
