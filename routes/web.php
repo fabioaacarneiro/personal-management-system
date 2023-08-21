@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountSettings;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SignController;
@@ -16,4 +17,9 @@ Route::controller(LoginController::class)->group(function () {
 Route::controller(SignController::class)->group(function () {
     Route::get('/sign', 'index')->name('sign.index');
     Route::post('/sign', 'store')->name('sign.store');
+});
+
+Route::controller(AccountSettings::class)->group(function () {
+    Route::get('/accountsettins', 'index')->name('account.index');
+    Route::post('/accountsettins', 'index')->name('account.index');
 });

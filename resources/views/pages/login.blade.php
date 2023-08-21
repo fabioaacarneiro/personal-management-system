@@ -1,5 +1,5 @@
 @extends('master')
-@section('login', 'Login')
+@section('title', 'Login')
 
 @section('content')
     <a href="{{ route('home') }}">Home</a>
